@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Downtown US skyline, illuminated billboard supports, and multilane road at dusk">
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#172e56"/><stop offset=".32" stop-color="#547b9a"/><stop offset=".58" stop-color="#f0a878"/><stop offset=".72" stop-color="#9e7f80"/><stop offset="1" stop-color="#303f4a"/></linearGradient>
+ <linearGradient id="glass" x2="1" y2="0"><stop stop-color="#142b43"/><stop offset=".32" stop-color="#5a91a8"/><stop offset=".55" stop-color="#173952"/><stop offset=".82" stop-color="#8cb7c2"/><stop offset="1" stop-color="#102940"/></linearGradient>
+ <linearGradient id="concrete" x2="0" y2="1"><stop stop-color="#667681"/><stop offset=".2" stop-color="#33434d"/><stop offset="1" stop-color="#18252c"/></linearGradient>
+ <linearGradient id="sign" x2="0" y2="1"><stop stop-color="#f3f3e9"/><stop offset=".6" stop-color="#d7dce0"/><stop offset="1" stop-color="#8b9ba4"/></linearGradient>
+ <linearGradient id="road" x2="0" y2="1"><stop stop-color="#4e575c"/><stop offset=".3" stop-color="#283238"/><stop offset="1" stop-color="#121a20"/></linearGradient>
+ <linearGradient id="glassshine" x2="1" y2="0"><stop stop-color="#ffffff" stop-opacity="0"/><stop offset=".48" stop-color="#ffffff" stop-opacity=".22"/><stop offset=".55" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+ <radialGradient id="lamp"><stop stop-color="#fffde0"/><stop offset=".25" stop-color="#ffe8a0"/><stop offset="1" stop-color="#ffc55c" stop-opacity="0"/></radialGradient>
+ <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="8"/></filter>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feGaussianBlur stdDeviation="10"/></filter>
+ <pattern id="windows" width="34" height="42" patternUnits="userSpaceOnUse"><rect x="5" y="7" width="21" height="25" fill="#ffc96a" opacity=".8"/><rect x="8" y="10" width="15" height="19" fill="#a3d3e2" opacity=".6"/></pattern>
+ <pattern id="darkwindows" width="29" height="36" patternUnits="userSpaceOnUse"><rect x="5" y="6" width="16" height="22" fill="#ffce79" opacity=".65"/><rect x="8" y="9" width="10" height="16" fill="#46758a" opacity=".75"/></pattern>
+</defs>
+<rect width="1600" height="900" fill="url(#sky)"/>
+<circle cx="180" cy="438" r="118" fill="#ffc783" opacity=".23" filter="url(#glow)"/>
+<path d="M0 360 Q230 282 430 370 T820 330 T1230 350 T1600 280 V610 H0Z" fill="#ffc18b" opacity=".2"/>
+<!-- distant skyline -->
+<g fill="#20364b" opacity=".95">
+<path d="M0 300h80v280H0zM86 360h63v220H86zM156 325h98v255h-98zM267 390h90v190h-90zM365 345h71v235h-71zM447 390h85v190h-85zM548 330h76v250h-76zM638 355h110v225H638zM761 385h76v195h-76zM846 315h86v265h-86zM947 365h95v215h-95zM1053 340h76v240h-76zM1140 380h105v200h-105zM1255 310h90v270h-90zM1353 360h94v220h-94zM1456 305h144v275h-144z"/>
+</g>
+<g fill="url(#darkwindows)" opacity=".82">
+<path d="M0 300h80v280H0zM156 325h98v255h-98zM365 345h71v235h-71zM548 330h76v250h-76zM638 355h110v225H638zM846 315h86v265h-86zM947 365h95v215h-95zM1255 310h90v270h-90zM1456 305h144v275h-144z"/>
+</g>
+<!-- landmark towers -->
+<g>
+ <path d="M60 582V206l40-52 44 52v376Z" fill="url(#glass)" stroke="#9dbcc6" stroke-width="4"/>
+ <path d="M100 155V118h8v37M79 214h42M79 252h42M79 290h42M79 328h42M79 366h42M79 404h42M79 442h42M79 480h42" stroke="#f4c887" stroke-width="4" opacity=".9"/>
+ <path d="M1350 590V170l56-76 57 76v420Z" fill="url(#glass)" stroke="#91aeb9" stroke-width="4"/>
+ <path d="M1406 95V57h8v38M1373 206h88M1373 245h88M1373 284h88M1373 323h88M1373 362h88M1373 401h88M1373 440h88M1373 479h88" stroke="#ffcd80" stroke-width="4"/>
+ <path d="M1410 170v420" stroke="#b8dae2" stroke-width="8" opacity=".45"/>
+</g>
+<!-- office blocks and retail -->
+<g>
+ <path d="M0 480L205 435 296 468V642H0Z" fill="#445965" stroke="#9eb0ad" stroke-width="4"/>
+ <path d="M10 500l186-40 81 26v145H10z" fill="url(#glass)"/>
+ <path d="M12 514l186-36M12 544l186-36M12 574l186-36M12 604l186-36M60 493v148M110 483v158M160 471v170M210 483v160" stroke="#d8c8a5" stroke-width="3" opacity=".8"/>
+ <path d="M1195 475l205-55 200 46v180h-405Z" fill="#394b55" stroke="#d8b482" stroke-width="4"/>
+ <path d="M1215 492l185-48 180 40v150h-365Z" fill="url(#glass)"/>
+ <path d="M1220 520l350-5M1220 555l350-5M1220 590l350-5M1270 482v155M1320 470v167M1370 458v179M1420 465v172M1470 477v160M1520 489v148" stroke="#efc485" stroke-width="3" opacity=".85"/>
+ <rect x="20" y="565" width="270" height="75" fill="#1b2f3c"/><g fill="#f6c26c"><rect x="37" y="581" width="56" height="45"/><rect x="103" y="581" width="56" height="45"/><rect x="169" y="581" width="56" height="45"/></g>
+ <rect x="1215" y="562" width="360" height="82" fill="#172b38"/><g fill="#f6c26c"><rect x="1238" y="576" width="64" height="55"/><rect x="1315" y="576" width="64" height="55"/><rect x="1392" y="576" width="64" height="55"/><rect x="1469" y="576" width="64" height="55"/></g>
+ <path d="M1220 555h350" stroke="#ffdc9f" stroke-width="6"/>
+</g>
+<!-- billboard floodlight beams -->
+<g opacity=".23"><path d="M390 135L310 630 450 630 500 135Z" fill="#ffe6a0"/><path d="M1150 110L1100 600 1240 600 1240 110Z" fill="#ffdb91"/></g>
+<!-- billboard rear lattice and poles -->
+<g stroke="#17242d" stroke-width="15" fill="none">
+ <path d="M390 575L430 128 1205 115 1252 570"/>
+ <path d="M390 575L1252 570M410 365L1230 360M421 245L1218 240"/>
+ <path d="M450 129L500 240 550 127 600 239 650 125 700 238 750 123 800 236 850 121 900 233 950 119 1000 231 1050 117 1100 229 1155 116"/>
+</g>
+<g stroke="#7f969e" stroke-width="4" fill="none" opacity=".85">
+ <path d="M390 575L430 128 1205 115 1252 570M390 575L1252 570M410 365L1230 360M421 245L1218 240"/>
+ <path d="M450 129L500 240 550 127 600 239 650 125 700 238 750 123 800 236 850 121 900 233 950 119 1000 231 1050 117 1100 229 1155 116"/>
+</g>
+<!-- blank billboard face: dynamic poster is overlaid by HTML -->
+<path d="M442 152L1190 138 1220 498 414 507Z" fill="#071421" opacity=".78" filter="url(#shadow)"/>
+<path d="M430 139L1195 125 1222 493 412 504Z" fill="url(#sign)" stroke="#d7e4e4" stroke-width="12"/>
+<path d="M444 154L1180 141 1205 478 428 489Z" fill="#f2f4ef" stroke="#25333c" stroke-width="8"/>
+<path d="M444 154L1180 141 1205 478 428 489Z" fill="url(#glassshine)" opacity=".5"/>
+<!-- broad structural supports focused and illuminated -->
+<g>
+ <path d="M478 493L454 745M1148 480L1190 745" stroke="#101a20" stroke-width="45"/>
+ <path d="M478 493L454 745M1148 480L1190 745" stroke="url(#concrete)" stroke-width="31"/>
+ <path d="M478 500L457 742M1148 488L1188 742" stroke="#aebbc0" stroke-width="3" opacity=".8"/>
+ <path d="M443 740L488 740M1165 740L1210 740" stroke="#151d22" stroke-width="18"/>
+ <path d="M457 753L490 753M1170 753L1203 753" stroke="#f8c96e" stroke-width="5" opacity=".9"/>
+ <path d="M400 520L1250 510" stroke="#111b20" stroke-width="22"/>
+ <path d="M405 517L1248 507" stroke="#9aadb3" stroke-width="3"/>
+ <path d="M417 522L440 550 463 522 486 550 509 522 532 550 555 522 578 550 601 522 624 550 647 522 670 550 693 522 716 550 739 522 762 550 785 522 808 550 831 522 854 550 877 522 900 550 923 522 946 550 969 522 992 550 1015 522 1038 550 1061 522 1084 550 1107 522 1130 550 1153 522 1176 550 1199 522 1222 550 1245 522" fill="none" stroke="#17242d" stroke-width="9"/>
+</g>
+<!-- individual flood lamps / brackets -->
+<g stroke="#14242b" stroke-width="8" stroke-linecap="round">
+ <path d="M455 126L437 77M545 124L535 65M635 122L626 54M725 120L722 43M815 118L819 40M905 116L915 43M995 114L1011 52M1085 112L1106 63M1170 110L1195 77"/>
+</g>
+<g>
+ <g fill="#ffe2a0" opacity=".7" filter="url(#glow)"><circle cx="432" cy="75" r="23"/><circle cx="532" cy="63" r="23"/><circle cx="624" cy="52" r="23"/><circle cx="720" cy="41" r="23"/><circle cx="819" cy="38" r="23"/><circle cx="916" cy="42" r="23"/><circle cx="1012" cy="50" r="23"/><circle cx="1107" cy="61" r="23"/><circle cx="1197" cy="76" r="23"/></g>
+ <g fill="#fff7d8" stroke="#6d7d83" stroke-width="4"><rect x="414" y="63" width="36" height="17" rx="3" transform="rotate(-15 432 71)"/><rect x="514" y="51" width="36" height="17" rx="3" transform="rotate(-12 532 59)"/><rect x="606" y="40" width="36" height="17" rx="3" transform="rotate(-8 624 48)"/><rect x="702" y="29" width="36" height="17" rx="3" transform="rotate(-4 720 37)"/><rect x="801" y="26" width="36" height="17" rx="3"/><rect x="898" y="30" width="36" height="17" rx="3" transform="rotate(4 916 38)"/><rect x="994" y="38" width="36" height="17" rx="3" transform="rotate(8 1012 46)"/><rect x="1089" y="49" width="36" height="17" rx="3" transform="rotate(12 1107 57)"/><rect x="1179" y="64" width="36" height="17" rx="3" transform="rotate(15 1197 72)"/></g>
+</g>
+<!-- road approach -->
+<path d="M0 648L1600 625V900H0Z" fill="#202930"/>
+<path d="M0 670L1600 649" stroke="#e5c78a" stroke-width="15"/>
+<path d="M0 685L1600 665" stroke="#8d9ca0" stroke-width="3"/>
+<path d="M0 736H1600M0 828H1600" stroke="#0f181e" stroke-width="8"/>
+<path d="M0 738H1600M0 830H1600" stroke="#faf0c5" stroke-width="5" stroke-dasharray="88 66" opacity=".88"/>
+<!-- road reflections -->
+<g opacity=".42" filter="url(#glow)" stroke-linecap="round"><path d="M80 793h150M380 852h270M900 777h180M1250 852h250" stroke="#ffdc91" stroke-width="9"/><path d="M250 820h110M780 850h90M1130 800h170" stroke="#92d9f3" stroke-width="7"/></g>
+<!-- cars and vehicles as illustrations, not emoji -->
+<g transform="translate(80 700)">
+ <ellipse cx="95" cy="70" rx="112" ry="17" fill="#080d11" opacity=".55"/>
+ <path d="M5 43L20 25 57 12Q82 -5 119 7L151 27 184 33 200 52 199 68H0L0 51Z" fill="#16242e" stroke="#9caeb3" stroke-width="4"/>
+ <path d="M39 24L68 10Q91 3 113 11L136 27Z" fill="#8bbacc" stroke="#273c49" stroke-width="4"/>
+ <path d="M78 12L78 28M139 30l13 3" stroke="#eaf1e4" stroke-width="3"/>
+ <rect x="3" y="48" width="25" height="12" rx="3" fill="#ffeab0"/><rect x="170" y="48" width="23" height="12" rx="3" fill="#ff5e55"/>
+ <circle cx="42" cy="66" r="17" fill="#111820" stroke="#828e94" stroke-width="5"/><circle cx="154" cy="66" r="17" fill="#111820" stroke="#828e94" stroke-width="5"/>
+</g>
+<g transform="translate(880 722) scale(.8)">
+ <ellipse cx="100" cy="65" rx="105" ry="16" fill="#080d11" opacity=".52"/>
+ <path d="M0 42L19 30 57 20 88 7 133 14 159 31 190 40 201 58 200 66H0Z" fill="#b94635" stroke="#d8b5a1" stroke-width="4"/>
+ <path d="M62 22L91 10 126 16 148 32 62 30Z" fill="#9ac8d5" stroke="#573c36" stroke-width="4"/>
+ <rect x="4" y="45" width="23" height="10" rx="3" fill="#fff0b6"/><rect x="171" y="46" width="24" height="10" rx="3" fill="#ff6154"/>
+ <circle cx="43" cy="64" r="16" fill="#141c21" stroke="#a6a6a1" stroke-width="5"/><circle cx="158" cy="64" r="16" fill="#141c21" stroke="#a6a6a1" stroke-width="5"/>
+</g>
+<!-- light poles with realistic lamp heads -->
+<g stroke="#293740" stroke-width="8" fill="none"><path d="M275 640V402l-65 -35h-29M1300 630V420l60 -26h38"/></g>
+<g fill="#fff3bd" stroke="#34454d" stroke-width="4"><path d="M169 359h53l10 16h-73z"/><path d="M1378 382h49l9 16h-68z"/></g>
+<g fill="#fff2b5" opacity=".42" filter="url(#glow)"><ellipse cx="190" cy="370" rx="42" ry="16"/><ellipse cx="1398" cy="391" rx="42" ry="16"/></g>
+<rect width="1600" height="900" fill="url(#glassshine)" opacity=".3"/>
+</svg>
