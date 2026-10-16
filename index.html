@@ -36,7 +36,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0
 .traffic-lane.one{top:43%}.traffic-lane.two{top:77%;opacity:.32;animation-duration:2.1s}
 .road-glow{position:absolute;height:8px;width:150px;border-radius:99px;filter:blur(8px);opacity:.8}
 .road-glow.warm{left:-10%;top:60%;background:#f1a25d;animation:streak-left 7s linear infinite}.road-glow.cool{right:-10%;top:30%;background:#8bcde9;animation:streak-right 9s linear infinite}
-.traffic-car{position:absolute;width:clamp(105px,13vw,190px);height:clamp(37px,4.4vw,62px);filter:drop-shadow(0 7px 5px #0009);will-change:transform}
+.traffic-car{position:absolute;width:clamp(105px,13vw,190px);height:clamp(37px,4.4vw,62px);filter:drop-shadow(0 7px 5px #0009);will-change:transform}.traffic-car:after{content:"";position:absolute;z-index:-1;right:80%;top:52%;height:7px;width:clamp(65px,9vw,130px);background:linear-gradient(90deg,transparent,var(--car-color));filter:blur(4px);opacity:.7;pointer-events:none}.traffic-car.reverse:after{right:auto;left:80%;background:linear-gradient(90deg,var(--car-color),transparent)}
 .traffic-car .body{position:absolute;left:2%;right:2%;bottom:14%;height:43%;border-radius:18px 25px 8px 8px;background:linear-gradient(180deg,var(--car-hi),var(--car-color) 50%,var(--car-dark));border:1px solid #ffffff80}
 .traffic-car .roof{position:absolute;left:23%;top:10%;width:52%;height:42%;background:linear-gradient(130deg,#91b6c7,#213947 65%,#668b99);clip-path:polygon(17% 0,78% 0,100% 100%,0 100%);border-top:2px solid #e1e9e6}
 .traffic-car .glassline{position:absolute;left:48%;top:12%;height:36%;width:2px;background:#d0e2e6aa}
@@ -59,7 +59,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0
 .city-caption{display:flex;position:absolute;left:14px;right:14px;top:14px;z-index:8;justify-content:space-between;align-items:center;gap:10px;pointer-events:none}
 .city-chip{background:#111d2bd9;color:#f7f5ec;border:1px solid #ffffff55;border-radius:999px;padding:7px 11px;font-size:10px;font-weight:850;letter-spacing:.12em;backdrop-filter:blur(8px)}
 .scene-controls{position:absolute;z-index:9;bottom:12px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:center;gap:10px;color:#fff;font-size:10px;letter-spacing:.1em;font-weight:800;text-shadow:0 1px 3px #000}
-.sound-toggle{background:#101820e8;color:#fff;border:1px solid #ffffff88;border-radius:999px;padding:9px 13px;font:inherit;font-size:12px;letter-spacing:0;cursor:pointer;backdrop-filter:blur(8px)}
+.control-group{display:flex;align-items:center;gap:8px}.sound-toggle{background:#101820e8;color:#fff;border:1px solid #ffffff88;border-radius:999px;padding:9px 13px;font:inherit;font-size:12px;letter-spacing:0;cursor:pointer;backdrop-filter:blur(8px);white-space:nowrap}.sound-toggle[aria-pressed="true"]{border-color:#d5ff65a8}.city-scene.motion-reduced .traffic-car,.city-scene.motion-reduced .traffic-scooter,.city-scene.motion-reduced .traffic-lane,.city-scene.motion-reduced .road-glow,.city-scene.motion-reduced .light-sweep,.city-scene.motion-reduced .billboard-screen-glare{animation:none!important}.city-scene.motion-reduced .traffic-car,.city-scene.motion-reduced .traffic-scooter{display:none}.city-scene.motion-reduced .light-sweep,.city-scene.motion-reduced .billboard-screen-glare{display:none}
 .sound-toggle:focus-visible,.visit-link:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .featured-info{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:15px 3px 3px}.featured-info strong{font-size:16px}.featured-info .caption{margin:3px 0 0;padding:0;font-size:12px}.featured-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.visit-link{color:var(--accent);font-size:13px;font-weight:800;text-decoration:none;white-space:nowrap}
 @keyframes traffic-left{from{transform:translateX(115vw)}to{transform:translateX(-250px)}}
@@ -69,9 +69,9 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0
 @keyframes frame-sweep{0%,12%{transform:translateX(-120%);opacity:0}28%,38%{opacity:.8}60%,100%{transform:translateX(140%);opacity:0}}
 @keyframes screen-glint{0%,18%{transform:translateX(-135%);opacity:0}34%,43%{opacity:.75}66%,100%{transform:translateX(135%);opacity:0}}
 @keyframes streak-left{from{transform:translateX(0)}to{transform:translateX(125vw)}}@keyframes streak-right{from{transform:translateX(0)}to{transform:translateX(-125vw)}}
-@media(max-width:760px){.city-scene{aspect-ratio:4/3;height:auto}.traffic-overlay{height:32%}.traffic-car{width:118px;height:42px}.traffic-car.car-silver{width:135px}.traffic-car.car-blue{width:100px;height:34px}.traffic-scooter{transform:scale(.82);transform-origin:left top}.traffic-scooter.reverse{transform:scaleX(-1) scale(.82);transform-origin:center top}.city-caption{left:8px;right:8px;top:8px}.city-chip{font-size:8px;padding:6px 8px}.scene-controls{left:8px;right:8px;bottom:7px}.featured-info{align-items:flex-start;flex-direction:column}.featured-actions{width:100%;justify-content:space-between}}
+@media(max-width:760px){.city-scene{aspect-ratio:4/3;height:auto}.traffic-overlay{height:32%}.traffic-car{width:118px;height:42px}.traffic-car.car-silver{width:135px}.traffic-car.car-blue{width:100px;height:34px}.traffic-scooter{transform:scale(.82);transform-origin:left top}.traffic-scooter.reverse{transform:scaleX(-1) scale(.82);transform-origin:center top}.city-caption{left:8px;right:8px;top:8px}.city-chip{font-size:8px;padding:6px 8px}.scene-controls{left:8px;right:8px;bottom:7px}.control-group{gap:5px}.sound-toggle{padding:7px 9px;font-size:10px}.featured-info{align-items:flex-start;flex-direction:column}.featured-actions{width:100%;justify-content:space-between}}
 @media(max-width:400px){.city-scene{aspect-ratio:4/3;height:auto}.city-chip{letter-spacing:.06em}.city-chip:first-child{max-width:65%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.traffic-scooter{display:none}}
-@media(prefers-reduced-motion:reduce){.traffic-car,.traffic-scooter,.traffic-lane,.road-glow,.light-sweep,.billboard-screen-glare{animation:none!important}.traffic-overlay .traffic-car,.traffic-overlay .traffic-scooter{display:none}.billboard-screen-glare,.light-sweep{display:none}}
+@media(prefers-reduced-motion:reduce){.city-scene:not(.motion-enabled) .traffic-car,.city-scene:not(.motion-enabled) .traffic-scooter,.city-scene:not(.motion-enabled) .traffic-lane,.city-scene:not(.motion-enabled) .road-glow,.city-scene:not(.motion-enabled) .light-sweep,.city-scene:not(.motion-enabled) .billboard-screen-glare{animation:none!important}.city-scene:not(.motion-enabled) .traffic-car,.city-scene:not(.motion-enabled) .traffic-scooter{display:none}.city-scene:not(.motion-enabled) .light-sweep,.city-scene:not(.motion-enabled) .billboard-screen-glare{display:none}}
 
 </style>
 </head>
@@ -105,7 +105,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0
   <div class="traffic-scooter reverse"><i class="rider"></i><i class="helmet"></i><i class="scoot-body"></i><i class="scoot-wheel a"></i><i class="scoot-wheel b"></i><i class="scoot-light"></i></div>
  </div>
  <div class="city-caption"><span class="city-chip">CROWDCANVAS · CITY EDITION</span><span class="city-chip">LIVE COMMUNITY BILLBOARD</span></div>
- <div class="scene-controls"><span>ILLUMINATED BILLBOARD · CITY TRAFFIC</span><button id="soundToggle" class="sound-toggle" type="button" aria-pressed="false">🔇 Sound off</button></div>
+ <div class="scene-controls"><span>ILLUMINATED BILLBOARD · CITY TRAFFIC</span><div class="control-group"><button id="motionToggle" class="sound-toggle" type="button" aria-pressed="true">⏸ Traffic moving</button><button id="soundToggle" class="sound-toggle" type="button" aria-pressed="false">🔇 Sound off</button></div></div>
 </div>
 <div class="featured-info"><div><strong id="featuredTitle">Latest community poster</strong><p id="featuredCaption" class="caption">The newest community poster will appear on the billboard.</p></div><div class="featured-actions"><a id="featuredVisit" class="visit-link" hidden target="_blank" rel="noopener noreferrer">Visit website ↗</a><button id="uploadJump" class="btn" type="button">Put your poster on the wall ↓</button></div></div>
 </section>
@@ -204,7 +204,14 @@ themeButton.addEventListener('click',()=>{const next=root.dataset.theme==='dark'
 // Smoothly jump to the existing uploader from the hero CTA.
 $('uploadJump').addEventListener('click',()=>{$('posterFile').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});$('posterFile').focus({preventScroll:true});});
 // A small generated city ambience: starts only after an explicit click and uses no external audio assets.
-const soundButton=$('soundToggle');let ambientContext=null,ambientNodes=[];
+const soundButton=$('soundToggle');
+const motionButton=$('motionToggle'),cityScene=$('cityScene');
+const prefersLessMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(prefersLessMotion)cityScene.classList.add('motion-reduced');else cityScene.classList.add('motion-enabled');
+function updateMotionButton(){const on=!cityScene.classList.contains('motion-reduced');motionButton.textContent=on?'⏸ Traffic moving':'▶ Enable traffic';motionButton.setAttribute('aria-pressed',String(on));motionButton.setAttribute('aria-label',on?'Pause traffic animation':'Enable traffic animation');}
+updateMotionButton();
+motionButton.addEventListener('click',()=>{const paused=cityScene.classList.toggle('motion-reduced');cityScene.classList.toggle('motion-enabled',!paused);updateMotionButton();});
+let ambientContext=null,ambientNodes=[];
 function stopCitySound(){ambientNodes.forEach(node=>{try{node.stop?.()}catch{}try{node.disconnect?.()}catch{}});ambientNodes=[];if(ambientContext){ambientContext.close().catch(()=>{});ambientContext=null;}soundButton.textContent='🔇 Sound off';soundButton.setAttribute('aria-pressed','false');}
 async function startCitySound(){
  const AudioCtx=window.AudioContext||window.webkitAudioContext;

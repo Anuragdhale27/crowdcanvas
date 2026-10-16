@@ -89,22 +89,7 @@
 <path d="M0 738H1600M0 830H1600" stroke="#faf0c5" stroke-width="5" stroke-dasharray="88 66" opacity=".88"/>
 <!-- road reflections -->
 <g opacity=".42" filter="url(#glow)" stroke-linecap="round"><path d="M80 793h150M380 852h270M900 777h180M1250 852h250" stroke="#ffdc91" stroke-width="9"/><path d="M250 820h110M780 850h90M1130 800h170" stroke="#92d9f3" stroke-width="7"/></g>
-<!-- cars and vehicles as illustrations, not emoji -->
-<g transform="translate(80 700)">
- <ellipse cx="95" cy="70" rx="112" ry="17" fill="#080d11" opacity=".55"/>
- <path d="M5 43L20 25 57 12Q82 -5 119 7L151 27 184 33 200 52 199 68H0L0 51Z" fill="#16242e" stroke="#9caeb3" stroke-width="4"/>
- <path d="M39 24L68 10Q91 3 113 11L136 27Z" fill="#8bbacc" stroke="#273c49" stroke-width="4"/>
- <path d="M78 12L78 28M139 30l13 3" stroke="#eaf1e4" stroke-width="3"/>
- <rect x="3" y="48" width="25" height="12" rx="3" fill="#ffeab0"/><rect x="170" y="48" width="23" height="12" rx="3" fill="#ff5e55"/>
- <circle cx="42" cy="66" r="17" fill="#111820" stroke="#828e94" stroke-width="5"/><circle cx="154" cy="66" r="17" fill="#111820" stroke="#828e94" stroke-width="5"/>
-</g>
-<g transform="translate(880 722) scale(.8)">
- <ellipse cx="100" cy="65" rx="105" ry="16" fill="#080d11" opacity=".52"/>
- <path d="M0 42L19 30 57 20 88 7 133 14 159 31 190 40 201 58 200 66H0Z" fill="#b94635" stroke="#d8b5a1" stroke-width="4"/>
- <path d="M62 22L91 10 126 16 148 32 62 30Z" fill="#9ac8d5" stroke="#573c36" stroke-width="4"/>
- <rect x="4" y="45" width="23" height="10" rx="3" fill="#fff0b6"/><rect x="171" y="46" width="24" height="10" rx="3" fill="#ff6154"/>
- <circle cx="43" cy="64" r="16" fill="#141c21" stroke="#a6a6a1" stroke-width="5"/><circle cx="158" cy="64" r="16" fill="#141c21" stroke="#a6a6a1" stroke-width="5"/>
-</g>
+<!-- Vehicle traffic is rendered as independently animated HTML vehicles above this road; keep this backdrop vehicle-free. -->
 <!-- light poles with realistic lamp heads -->
 <g stroke="#293740" stroke-width="8" fill="none"><path d="M275 640V402l-65 -35h-29M1300 630V420l60 -26h38"/></g>
 <g fill="#fff3bd" stroke="#34454d" stroke-width="4"><path d="M169 359h53l10 16h-73z"/><path d="M1378 382h49l9 16h-68z"/></g>
