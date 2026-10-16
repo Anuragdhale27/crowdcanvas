@@ -4,6 +4,9 @@
 - `index.html`: responsive upload form and global gallery.
 - `supabase-setup.sql`: storage bucket, table, and public access policies.
 
+## Local preview note
+The city scene uses `assets/us-city-billboard.svg`. The current `index.html` also embeds a fallback copy of that artwork so a single-file local preview can still show the city scene when the relative asset path is missing. For normal development, download or clone the entire repository and keep the `assets/` folder beside `index.html`; do not copy only one file when testing a changed asset.
+
 ## 1. Create Supabase project
 1. Create a project at https://supabase.com/dashboard.
 2. Open SQL Editor -> New query.
