@@ -18,10 +18,10 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0
  
 /* Cinematic US city billboard — detailed local artwork with a live poster layer */
 .feature{overflow:hidden;padding:12px;background:var(--panel)}
-.city-scene{height:clamp(600px,58vw,780px);position:relative;isolation:isolate;overflow:hidden;border-radius:13px;background:#202b37;box-shadow:inset 0 0 0 1px #ffffff26}
+.city-scene{width:100%;height:auto;aspect-ratio:16/9;position:relative;isolation:isolate;overflow:hidden;border-radius:13px;background:#202b37;box-shadow:inset 0 0 0 1px #ffffff26}
 .scene-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;z-index:0;user-select:none;pointer-events:none}
 .scene-vignette{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,#0717281c 0%,transparent 45%,#10182030 72%,#070d14b8 100%),linear-gradient(90deg,#09111d22,transparent 22%,transparent 80%,#09111d26)}
-.billboard-display{position:absolute;left:26.9%;top:16.6%;width:48.6%;height:37.7%;z-index:4;display:flex;align-items:center;justify-content:center;overflow:hidden;clip-path:polygon(2.2% 4%,96% 0,100% 96%,0 100%);background:linear-gradient(125deg,#e8e8df,#f7f6ec 45%,#b7c2c6 100%);box-shadow:inset 0 0 16px #fff9}
+.billboard-display{position:absolute;left:39.25%;top:13.78%;width:21.75%;height:52.55%;z-index:4;display:flex;align-items:center;justify-content:center;overflow:hidden;clip-path:polygon(3.7% 2.3%,95.4% 0,100% 97.7%,0 100%);background:linear-gradient(125deg,#e8e8df,#f7f6ec 45%,#b7c2c6 100%);box-shadow:inset 0 0 16px #fff9}
 .billboard-screen{position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:100%;overflow:hidden;background:radial-gradient(ellipse at center,#fffdf4 0%,#e9e9df 75%,#a8b4bc 100%);cursor:default}
 .poster-link{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:97%;width:auto;max-width:96%;flex:0 1 auto;outline-offset:4px}
 .billboard-screen[href] .poster-link{cursor:pointer}
@@ -30,11 +30,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0
 .billboard-screen[href]:hover .poster-link-image{transform:translateY(-2px) scale(1.012);box-shadow:0 7px 22px #07111d66,0 0 0 2px #fff}
 .billboard-screen:focus-visible{outline:4px solid var(--accent);outline-offset:-5px}
 .billboard-screen-glare{position:absolute;inset:0;pointer-events:none;z-index:2;background:linear-gradient(110deg,transparent 28%,#fff7 46%,transparent 56%);transform:translateX(-135%);animation:screen-glint 11s ease-in-out infinite}
-.lamp-row{position:absolute;z-index:5;left:27%;width:48.7%;top:7%;height:6%;display:flex;justify-content:space-around;pointer-events:none}
-.lamp-row i{position:relative;display:block;width:5px;height:100%;background:linear-gradient(90deg,#172530,#81959d,#26353f);transform:rotate(-12deg);transform-origin:top}
-.lamp-row i:after{content:"";position:absolute;top:-3px;left:-7px;width:18px;height:8px;border-radius:3px;background:#fff9d5;border:1px solid #687a80;box-shadow:0 0 9px 4px #ffe4a488;animation:lamp-pulse 3.4s ease-in-out infinite alternate}
-.lamp-row i:nth-child(2n):after{animation-delay:-1.6s}
-.light-sweep{position:absolute;left:26%;top:7%;width:50%;height:48%;pointer-events:none;z-index:5;background:linear-gradient(105deg,transparent 35%,#fff7 48%,transparent 57%);transform:translateX(-120%);mix-blend-mode:screen;animation:frame-sweep 12s ease-in-out infinite}
+.light-sweep{position:absolute;left:38.5%;top:12%;width:23%;height:55%;pointer-events:none;z-index:5;background:linear-gradient(105deg,transparent 35%,#fff7 48%,transparent 57%);transform:translateX(-120%);mix-blend-mode:screen;animation:frame-sweep 12s ease-in-out infinite}
 .traffic-overlay{position:absolute;left:0;right:0;bottom:0;height:29%;z-index:6;overflow:hidden;pointer-events:none}
 .traffic-lane{position:absolute;left:0;right:0;height:3px;background:repeating-linear-gradient(90deg,#fff1c7e0 0 54px,transparent 54px 105px);opacity:.62;animation:lane-dash 1.6s linear infinite}
 .traffic-lane.one{top:43%}.traffic-lane.two{top:77%;opacity:.32;animation-duration:2.1s}
@@ -75,7 +71,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0
 @keyframes streak-left{from{transform:translateX(0)}to{transform:translateX(125vw)}}@keyframes streak-right{from{transform:translateX(0)}to{transform:translateX(-125vw)}}
 @media(max-width:760px){.city-scene{height:clamp(350px,92vw,500px)}.traffic-overlay{height:32%}.traffic-car{width:118px;height:42px}.traffic-car.car-silver{width:135px}.traffic-car.car-blue{width:100px;height:34px}.traffic-scooter{transform:scale(.82);transform-origin:left top}.traffic-scooter.reverse{transform:scaleX(-1) scale(.82);transform-origin:center top}.city-caption{left:8px;right:8px;top:8px}.city-chip{font-size:8px;padding:6px 8px}.scene-controls{left:8px;right:8px;bottom:7px}.featured-info{align-items:flex-start;flex-direction:column}.featured-actions{width:100%;justify-content:space-between}}
 @media(max-width:400px){.city-scene{height:350px}.city-chip{letter-spacing:.06em}.city-chip:first-child{max-width:65%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.traffic-scooter{display:none}}
-@media(prefers-reduced-motion:reduce){.traffic-car,.traffic-scooter,.traffic-lane,.road-glow,.lamp-row i:after,.light-sweep,.billboard-screen-glare{animation:none!important}.traffic-overlay .traffic-car,.traffic-overlay .traffic-scooter{display:none}.billboard-screen-glare,.light-sweep{display:none}}
+@media(prefers-reduced-motion:reduce){.traffic-car,.traffic-scooter,.traffic-lane,.road-glow,.light-sweep,.billboard-screen-glare{animation:none!important}.traffic-overlay .traffic-car,.traffic-overlay .traffic-scooter{display:none}.billboard-screen-glare,.light-sweep{display:none}}
 
 </style>
 </head>
