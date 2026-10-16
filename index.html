@@ -22,9 +22,11 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0
 .scene-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;z-index:0;user-select:none;pointer-events:none}
 .scene-vignette{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,#0717281c 0%,transparent 45%,#10182030 72%,#070d14b8 100%),linear-gradient(90deg,#09111d22,transparent 22%,transparent 80%,#09111d26)}
 .billboard-display{position:absolute;left:26.9%;top:16.6%;width:48.6%;height:37.7%;z-index:4;display:flex;align-items:center;justify-content:center;overflow:hidden;clip-path:polygon(2.2% 4%,96% 0,100% 96%,0 100%);background:linear-gradient(125deg,#e8e8df,#f7f6ec 45%,#b7c2c6 100%);box-shadow:inset 0 0 16px #fff9}
-.billboard-screen{display:flex;align-items:center;justify-content:center;width:100%;height:100%;overflow:hidden;background:radial-gradient(ellipse at center,#fffdf4 0%,#e9e9df 75%,#a8b4bc 100%);cursor:default}
-.billboard-screen[href]{cursor:pointer}
-.poster-link-image{display:block;max-width:96%;max-height:97%;width:auto;height:97%;object-fit:contain;object-position:center;box-shadow:0 3px 13px #0a172b3b,0 0 0 2px #fff9;border-radius:2px;transition:transform .25s,box-shadow .25s}
+.billboard-screen{position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:100%;overflow:hidden;background:radial-gradient(ellipse at center,#fffdf4 0%,#e9e9df 75%,#a8b4bc 100%);cursor:default}
+.poster-link{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:97%;width:auto;max-width:96%;flex:0 1 auto;outline-offset:4px}
+.billboard-screen[href] .poster-link{cursor:pointer}
+.billboard-screen[href]{cursor:default}
+.poster-link-image{display:block;max-width:100%;max-height:100%;width:auto;height:100%;object-fit:contain;object-position:center;box-shadow:0 3px 13px #0a172b3b,0 0 0 2px #fff9;border-radius:2px;transition:transform .25s,box-shadow .25s}
 .billboard-screen[href]:hover .poster-link-image{transform:translateY(-2px) scale(1.012);box-shadow:0 7px 22px #07111d66,0 0 0 2px #fff}
 .billboard-screen:focus-visible{outline:4px solid var(--accent);outline-offset:-5px}
 .billboard-screen-glare{position:absolute;inset:0;pointer-events:none;z-index:2;background:linear-gradient(110deg,transparent 28%,#fff7 46%,transparent 56%);transform:translateX(-135%);animation:screen-glint 11s ease-in-out infinite}
@@ -71,10 +73,9 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0
 @keyframes frame-sweep{0%,12%{transform:translateX(-120%);opacity:0}28%,38%{opacity:.8}60%,100%{transform:translateX(140%);opacity:0}}
 @keyframes screen-glint{0%,18%{transform:translateX(-135%);opacity:0}34%,43%{opacity:.75}66%,100%{transform:translateX(135%);opacity:0}}
 @keyframes streak-left{from{transform:translateX(0)}to{transform:translateX(125vw)}}@keyframes streak-right{from{transform:translateX(0)}to{transform:translateX(-125vw)}}
-@media(max-width:760px){.city-scene{height:clamp(470px,110vw,620px)}.billboard-display{left:16%;top:17%;width:68%;height:29%;}.lamp-row{left:17%;width:67%;top:8%;height:5%}.light-sweep{left:14%;top:9%;width:72%;height:38%}.traffic-overlay{height:32%}.traffic-car{width:118px;height:42px}.traffic-car.car-silver{width:135px}.traffic-car.car-blue{width:100px;height:34px}.traffic-scooter{transform:scale(.82);transform-origin:left top}.traffic-scooter.reverse{transform:scaleX(-1) scale(.82);transform-origin:center top}.city-caption{left:8px;right:8px;top:8px}.city-chip{font-size:8px;padding:6px 8px}.scene-controls{left:8px;right:8px;bottom:7px}.featured-info{align-items:flex-start;flex-direction:column}.featured-actions{width:100%;justify-content:space-between}}
-@media(max-width:400px){.city-scene{height:470px}.billboard-display{left:12%;width:76%;height:27%;top:17%}.lamp-row{left:13%;width:75%;top:8%}.city-chip{letter-spacing:.06em}.city-chip:first-child{max-width:65%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.traffic-scooter{display:none}}
+@media(max-width:760px){.city-scene{height:clamp(350px,92vw,500px)}.traffic-overlay{height:32%}.traffic-car{width:118px;height:42px}.traffic-car.car-silver{width:135px}.traffic-car.car-blue{width:100px;height:34px}.traffic-scooter{transform:scale(.82);transform-origin:left top}.traffic-scooter.reverse{transform:scaleX(-1) scale(.82);transform-origin:center top}.city-caption{left:8px;right:8px;top:8px}.city-chip{font-size:8px;padding:6px 8px}.scene-controls{left:8px;right:8px;bottom:7px}.featured-info{align-items:flex-start;flex-direction:column}.featured-actions{width:100%;justify-content:space-between}}
+@media(max-width:400px){.city-scene{height:350px}.city-chip{letter-spacing:.06em}.city-chip:first-child{max-width:65%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.traffic-scooter{display:none}}
 @media(prefers-reduced-motion:reduce){.traffic-car,.traffic-scooter,.traffic-lane,.road-glow,.lamp-row i:after,.light-sweep,.billboard-screen-glare{animation:none!important}.traffic-overlay .traffic-car,.traffic-overlay .traffic-scooter{display:none}.billboard-screen-glare,.light-sweep{display:none}}
-.vehicle{display:none}.billboard-beam{opacity:0}}
 
 </style>
 </head>
