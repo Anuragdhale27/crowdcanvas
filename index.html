@@ -29,6 +29,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:23px 0
 <img id="preview" class="preview" alt="Selected poster preview">
 <label class="field" for="posterTitle">Poster title *</label><input id="posterTitle" type="text" maxlength="70" placeholder="Give your poster a name">
 <label class="field" for="posterCaption">Short message (optional)</label><textarea id="posterCaption" rows="3" maxlength="180" placeholder="What does your poster mean?"></textarea>
+<label class="field" for="posterUrl">Destination URL (optional)</label><input id="posterUrl" type="text" maxlength="500" inputmode="url" placeholder="https://yourwebsite.com"><p class="safety">Add a website, portfolio, product, or social link. Visitors who click your poster will open it in a new tab.</p>
 <div class="btnrow"><button id="uploadBtn" class="btn" disabled>Publish poster ↗</button></div>
 <p id="status" class="status" role="status" aria-live="polite"></p>
 <p class="safety">By publishing, you confirm you own the image or have permission to share it. Do not upload personal information, hateful content, or copyrighted work you don't have rights to. This MVP publishes uploads immediately and has no moderator dashboard; use only for a small test until moderation and abuse controls are added.</p></section>
@@ -51,6 +52,10 @@ let supabase = null, selectedFile = null, previewUrl = null;
 function setStatus(message, error=false){$('status').textContent=message;$('status').classList.toggle('error',error)}
 function safeText(value){return String(value ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function prettyDate(value){try{return new Date(value).toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'})}catch{return ''}}
+function normalizeDestination(value){
+ const raw=String(value||'').trim();if(!raw)return null;
+ try{const url=new URL(raw);if(!['http:','https:'].includes(url.protocol))return false;return url.href}catch{return false}
+}
 function makeCard(item){
  const article=document.createElement('article');article.className='card';
  const img=document.createElement('img');img.loading='lazy';img.src=item.image_url;img.alt=item.title||'Community poster';img.referrerPolicy='no-referrer';
@@ -58,12 +63,13 @@ function makeCard(item){
  const title=document.createElement('strong');title.textContent=item.title||'Untitled poster';
  const caption=document.createElement('p');caption.textContent=item.caption||'A contribution to CrowdCanvas';
  const date=document.createElement('p');date.textContent=prettyDate(item.created_at);
+ if(item.target_url){const link=document.createElement('a');link.href=item.target_url;link.target='_blank';link.rel='noopener noreferrer';link.setAttribute('aria-label','Open destination for '+(item.title||'poster'));link.style.display='block';link.style.color='inherit';link.style.textDecoration='none';link.append(img,title);link.addEventListener('click',()=>{});article.append(link);link.append(body);body.append(caption,date);return article}
  body.append(title,caption,date);article.append(img,body);return article;
 }
 async function loadGallery(){
  if(!supabase){$('gallery').innerHTML='<div class="empty">Setup needed: add your Supabase project URL and publishable/anon key in index.html, then reload.</div>';return}
  $('gallery').innerHTML='<div class="empty">Loading posters…</div>';
- const {data,error}=await supabase.from('posters').select('id,title,caption,image_url,created_at').order('created_at',{ascending:false}).limit(100);
+ const {data,error}=await supabase.from('posters').select('id,title,caption,image_url,target_url,created_at').order('created_at',{ascending:false}).limit(100);
  if(error){$('gallery').innerHTML='<div class="empty">Could not load the gallery. Check the SQL setup and Supabase keys. Details: '+safeText(error.message)+'</div>';return}
  $('count').textContent=String(data.length);
  $('barfill').style.width=Math.min(100,data.length/1000*100)+'%';
@@ -83,7 +89,8 @@ $('posterFile').addEventListener('change',e=>{
 $('uploadBtn').addEventListener('click',async()=>{
  if(!supabase){setStatus('Finish Supabase setup first: add the project URL and key to index.html.',true);return}
  if(!selectedFile){setStatus('Choose an image first.',true);return}
- const title=$('posterTitle').value.trim(),caption=$('posterCaption').value.trim();
+ const title=$('posterTitle').value.trim(),caption=$('posterCaption').value.trim(),targetUrl=normalizeDestination($('posterUrl').value);
+ if(targetUrl===false){setStatus('Enter a valid URL starting with https:// or http://, or leave it blank.',true);$('posterUrl').focus();return}
  if(!title){setStatus('Please add a title for your poster.',true);$('posterTitle').focus();return}
  const btn=$('uploadBtn');btn.disabled=true;btn.textContent='Publishing…';setStatus('Uploading your poster…');
  try{
@@ -92,10 +99,10 @@ $('uploadBtn').addEventListener('click',async()=>{
    const {error:uploadError}=await supabase.storage.from(BUCKET).upload(path,selectedFile,{contentType:selectedFile.type,upsert:false,cacheControl:'3600'});
    if(uploadError)throw uploadError;
    const {data:publicData}=supabase.storage.from(BUCKET).getPublicUrl(path);
-   const {error:insertError}=await supabase.from('posters').insert({title,caption,image_path:path,image_url:publicData.publicUrl});
+   const {error:insertError}=await supabase.from('posters').insert({title,caption,image_path:path,image_url:publicData.publicUrl,target_url:targetUrl});
    if(insertError)throw insertError;
    setStatus('Poster published to the global gallery. Thank you!');
-   $('posterTitle').value='';$('posterCaption').value='';$('posterFile').value='';selectedFile=null;
+   $('posterTitle').value='';$('posterCaption').value='';$('posterUrl').value='';$('posterFile').value='';selectedFile=null;
    if(previewUrl)URL.revokeObjectURL(previewUrl);previewUrl=null;$('preview').removeAttribute('src');$('preview').style.display='none';
    await loadGallery();
  }catch(err){setStatus('Upload failed: '+(err?.message||'unknown error')+'. Check your Supabase SQL/policies and bucket setup.',true)}

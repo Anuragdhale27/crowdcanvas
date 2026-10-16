@@ -33,7 +33,12 @@
    - Target/Value: `YOUR-GITHUB-USERNAME.github.io` (replace with your actual GitHub Pages hostname; do not include `/crowdcanvas`).
 3. Wait for DNS propagation. Then enable Enforce HTTPS in GitHub Pages when it becomes available.
 
-## 5. Test
+## 5. Enable clickable poster links
+1. In Supabase Dashboard -> SQL Editor, run `supabase-migration-poster-links.sql` to add the optional `target_url` column. Existing posters remain valid and their links stay blank.
+2. The upload form now accepts an optional destination URL. Use a full `https://` or `http://` URL. Posters with a URL open the destination in a new tab when clicked; posters without one remain non-clickable.
+3. The website only accepts HTTP(S) destinations and opens them with `rel="noopener noreferrer"` for safer new-tab behavior.
+
+## 6. Test
 - Open the deployed site in a private/incognito window.
 - Upload a small JPG/PNG/WebP with a title.
 - Refresh the page and open the URL on another device/browser. The poster should appear in the shared gallery.
