@@ -207,7 +207,7 @@ $('uploadJump').addEventListener('click',()=>{$('posterFile').scrollIntoView({be
 const soundButton=$('soundToggle');
 const motionButton=$('motionToggle'),cityScene=$('cityScene');
 const prefersLessMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(prefersLessMotion)cityScene.classList.add('motion-reduced');
+if(prefersLessMotion)cityScene.classList.add('motion-reduced');else cityScene.classList.add('motion-enabled');
 function updateMotionButton(){const on=!cityScene.classList.contains('motion-reduced');motionButton.textContent=on?'⏸ Traffic moving':'▶ Enable traffic';motionButton.setAttribute('aria-pressed',String(on));motionButton.setAttribute('aria-label',on?'Pause traffic animation':'Enable traffic animation');}
 updateMotionButton();
 motionButton.addEventListener('click',()=>{const paused=cityScene.classList.toggle('motion-reduced');cityScene.classList.toggle('motion-enabled',!paused);updateMotionButton();});
