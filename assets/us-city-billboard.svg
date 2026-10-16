@@ -42,41 +42,44 @@
  <rect x="1215" y="562" width="360" height="82" fill="#172b38"/><g fill="#f6c26c"><rect x="1238" y="576" width="64" height="55"/><rect x="1315" y="576" width="64" height="55"/><rect x="1392" y="576" width="64" height="55"/><rect x="1469" y="576" width="64" height="55"/></g>
  <path d="M1220 555h350" stroke="#ffdc9f" stroke-width="6"/>
 </g>
-<!-- billboard floodlight beams -->
-<g opacity=".23"><path d="M390 135L310 630 450 630 500 135Z" fill="#ffe6a0"/><path d="M1150 110L1100 600 1240 600 1240 110Z" fill="#ffdb91"/></g>
-<!-- billboard rear lattice and poles -->
-<g stroke="#17242d" stroke-width="15" fill="none">
- <path d="M390 575L430 128 1205 115 1252 570"/>
- <path d="M390 575L1252 570M410 365L1230 360M421 245L1218 240"/>
- <path d="M450 129L500 240 550 127 600 239 650 125 700 238 750 123 800 236 850 121 900 233 950 119 1000 231 1050 117 1100 229 1155 116"/>
+<!-- portrait-oriented billboard: the live poster is overlaid in HTML on the cream-lit screen -->
+<g opacity=".26"><path d="M610 100L550 650 710 650Z" fill="#ffe7aa"/><path d="M990 96L930 650 1090 650Z" fill="#ffe3a4"/></g>
+<!-- steel rear truss and mounting frame, all sized for a portrait campaign poster -->
+<g stroke="#14212b" stroke-width="13" fill="none">
+ <path d="M610 634L625 115 978 103 995 634M610 634L995 634M618 455L987 451M621 285L983 280"/>
+ <path d="M630 116L680 285 730 112 780 281 830 108 880 277 930 105 975 274"/>
+ <path d="M620 180L985 465M985 180L620 465M615 350L990 350M615 520L993 520"/>
 </g>
-<g stroke="#7f969e" stroke-width="4" fill="none" opacity=".85">
- <path d="M390 575L430 128 1205 115 1252 570M390 575L1252 570M410 365L1230 360M421 245L1218 240"/>
- <path d="M450 129L500 240 550 127 600 239 650 125 700 238 750 123 800 236 850 121 900 233 950 119 1000 231 1050 117 1100 229 1155 116"/>
+<g stroke="#7d959d" stroke-width="3" fill="none" opacity=".94">
+ <path d="M610 634L625 115 978 103 995 634M610 634L995 634M618 455L987 451M621 285L983 280"/>
+ <path d="M630 116L680 285 730 112 780 281 830 108 880 277 930 105 975 274"/>
+ <path d="M620 180L985 465M985 180L620 465M615 350L990 350M615 520L993 520"/>
 </g>
-<!-- blank billboard face: dynamic poster is overlaid by HTML -->
-<path d="M442 152L1190 138 1220 498 414 507Z" fill="#071421" opacity=".78" filter="url(#shadow)"/>
-<path d="M430 139L1195 125 1222 493 412 504Z" fill="url(#sign)" stroke="#d7e4e4" stroke-width="12"/>
-<path d="M444 154L1180 141 1205 478 428 489Z" fill="#f2f4ef" stroke="#25333c" stroke-width="8"/>
-<path d="M444 154L1180 141 1205 478 428 489Z" fill="url(#glassshine)" opacity=".5"/>
-<!-- broad structural supports focused and illuminated -->
+<!-- outer frame and recessed portrait screen -->
+<path d="M626 126L972 114 988 603 615 613Z" fill="#071421" opacity=".76" filter="url(#shadow)"/>
+<path d="M625 115L978 103 995 601 610 612Z" fill="url(#sign)" stroke="#dbe3e1" stroke-width="12"/>
+<path d="M641 135L960 124 976 586 628 597Z" fill="#101d28" stroke="#25343d" stroke-width="9"/>
+<path d="M641 135L960 124 976 586 628 597Z" fill="url(#glassshine)" opacity=".38"/>
+<!-- heavy illuminated support columns; deliberately visible below the sign -->
 <g>
- <path d="M478 493L454 745M1148 480L1190 745" stroke="#101a20" stroke-width="45"/>
- <path d="M478 493L454 745M1148 480L1190 745" stroke="url(#concrete)" stroke-width="31"/>
- <path d="M478 500L457 742M1148 488L1188 742" stroke="#aebbc0" stroke-width="3" opacity=".8"/>
- <path d="M443 740L488 740M1165 740L1210 740" stroke="#151d22" stroke-width="18"/>
- <path d="M457 753L490 753M1170 753L1203 753" stroke="#f8c96e" stroke-width="5" opacity=".9"/>
- <path d="M400 520L1250 510" stroke="#111b20" stroke-width="22"/>
- <path d="M405 517L1248 507" stroke="#9aadb3" stroke-width="3"/>
- <path d="M417 522L440 550 463 522 486 550 509 522 532 550 555 522 578 550 601 522 624 550 647 522 670 550 693 522 716 550 739 522 762 550 785 522 808 550 831 522 854 550 877 522 900 550 923 522 946 550 969 522 992 550 1015 522 1038 550 1061 522 1084 550 1107 522 1130 550 1153 522 1176 550 1199 522 1222 550 1245 522" fill="none" stroke="#17242d" stroke-width="9"/>
+ <path d="M655 600L638 758M952 590L978 758" stroke="#111a20" stroke-width="34"/>
+ <path d="M655 600L638 758M952 590L978 758" stroke="url(#concrete)" stroke-width="24"/>
+ <path d="M653 611L640 752M954 603L976 752" stroke="#c1cdd0" stroke-width="2.5" opacity=".85"/>
+ <path d="M618 755L657 755M958 755L997 755" stroke="#101a21" stroke-width="16"/>
+ <path d="M626 763L650 763M965 763L989 763" stroke="#f7cc76" stroke-width="4"/>
+ <path d="M602 607L1004 596" stroke="#111a20" stroke-width="20"/>
+ <path d="M606 603L1000 593" stroke="#9cabb0" stroke-width="3"/>
+ <path d="M615 611l18 20 18-20 18 20 18-20 18 20 18-20 18 20 18-20 18 20 18-20 18 20 18-20 18 20 18-20 18 20 18-20 18 20 18-20 18 20 18-20 18 20 18-20 18 20 18-20 18 20 18-20 18 20" fill="none" stroke="#182630" stroke-width="7"/>
 </g>
-<!-- individual flood lamps / brackets -->
-<g stroke="#14242b" stroke-width="8" stroke-linecap="round">
- <path d="M455 126L437 77M545 124L535 65M635 122L626 54M725 120L722 43M815 118L819 40M905 116L915 43M995 114L1011 52M1085 112L1106 63M1170 110L1195 77"/>
+<!-- nine individually mounted floodlight holders and warm glass bulbs -->
+<g stroke="#162630" stroke-width="8" stroke-linecap="round" fill="none">
+ <path d="M643 111L631 67M680 109L674 57M719 108L715 50M758 106L756 43M798 105L798 40M838 104L842 43M878 104L884 49M918 103L927 57M958 103L971 68"/>
 </g>
-<g>
- <g fill="#ffe2a0" opacity=".7" filter="url(#glow)"><circle cx="432" cy="75" r="23"/><circle cx="532" cy="63" r="23"/><circle cx="624" cy="52" r="23"/><circle cx="720" cy="41" r="23"/><circle cx="819" cy="38" r="23"/><circle cx="916" cy="42" r="23"/><circle cx="1012" cy="50" r="23"/><circle cx="1107" cy="61" r="23"/><circle cx="1197" cy="76" r="23"/></g>
- <g fill="#fff7d8" stroke="#6d7d83" stroke-width="4"><rect x="414" y="63" width="36" height="17" rx="3" transform="rotate(-15 432 71)"/><rect x="514" y="51" width="36" height="17" rx="3" transform="rotate(-12 532 59)"/><rect x="606" y="40" width="36" height="17" rx="3" transform="rotate(-8 624 48)"/><rect x="702" y="29" width="36" height="17" rx="3" transform="rotate(-4 720 37)"/><rect x="801" y="26" width="36" height="17" rx="3"/><rect x="898" y="30" width="36" height="17" rx="3" transform="rotate(4 916 38)"/><rect x="994" y="38" width="36" height="17" rx="3" transform="rotate(8 1012 46)"/><rect x="1089" y="49" width="36" height="17" rx="3" transform="rotate(12 1107 57)"/><rect x="1179" y="64" width="36" height="17" rx="3" transform="rotate(15 1197 72)"/></g>
+<g opacity=".62" filter="url(#glow)" fill="#ffe4a0">
+ <circle cx="629" cy="65" r="22"/><circle cx="673" cy="55" r="22"/><circle cx="714" cy="48" r="22"/><circle cx="755" cy="41" r="22"/><circle cx="798" cy="38" r="22"/><circle cx="843" cy="41" r="22"/><circle cx="885" cy="47" r="22"/><circle cx="928" cy="55" r="22"/><circle cx="973" cy="66" r="22"/>
+</g>
+<g fill="#fff8d8" stroke="#78898e" stroke-width="4">
+ <rect x="611" y="56" width="36" height="17" rx="3" transform="rotate(-13 629 64)"/><rect x="655" y="46" width="36" height="17" rx="3" transform="rotate(-7 673 54)"/><rect x="696" y="39" width="36" height="17" rx="3" transform="rotate(-3 714 47)"/><rect x="737" y="32" width="36" height="17" rx="3" transform="rotate(-1 755 40)"/><rect x="780" y="29" width="36" height="17" rx="3"/><rect x="825" y="32" width="36" height="17" rx="3" transform="rotate(3 843 40)"/><rect x="867" y="38" width="36" height="17" rx="3" transform="rotate(7 885 46)"/><rect x="910" y="46" width="36" height="17" rx="3" transform="rotate(11 928 54)"/><rect x="955" y="57" width="36" height="17" rx="3" transform="rotate(15 973 65)"/>
 </g>
 <!-- road approach -->
 <path d="M0 648L1600 625V900H0Z" fill="#202930"/>
