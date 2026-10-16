@@ -16,36 +16,65 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0
 @media(max-width:760px){.featured-link{min-height:clamp(430px,72vh,650px);padding:20px 10px 34px}.heroart{width:auto;height:auto;max-width:94%;max-height:62vh;object-fit:contain}.wrap{padding:0 14px}nav{padding:14px 0}.navnote{display:none}.hero{grid-template-columns:1fr;padding-top:34px;gap:22px}h1{font-size:clamp(40px,12vw,62px)}.counter{border-left:0;border-top:1px solid var(--line);padding:14px 0 0;min-width:0}.counter strong{display:inline-block;margin-right:8px}.feature{padding:10px;border-radius:13px}.content{grid-template-columns:1fr;gap:16px;margin:18px 0 40px}.panel{padding:16px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.cardbody{padding:9px}.themebtn{padding:8px 10px}}
 @media(max-width:380px){.gallery{grid-template-columns:1fr}.feature-head{font-size:10px}.themebtn{font-size:11px}}
  
-/* Cinematic city billboard */
+/* Cinematic US city billboard — detailed local artwork with a live poster layer */
 .feature{overflow:hidden;padding:12px;background:var(--panel)}
-.city-scene{height:clamp(500px,58vw,680px);position:relative;isolation:isolate;overflow:hidden;border-radius:13px;background:linear-gradient(180deg,#58bee9 0%,#b6e4ee 34%,#f5bd81 61%,#37434b 62%,#252c31 100%);box-shadow:inset 0 0 0 1px #ffffff24}
-.sky-glow{position:absolute;inset:0;background:linear-gradient(115deg,#fff8 0%,transparent 37%,#ffdf9b38 70%,transparent 100%);z-index:-2}
-.sun-glow{position:absolute;right:12%;top:7%;width:110px;aspect-ratio:1;border-radius:50%;background:#fff3bf;box-shadow:0 0 80px 30px #ffd88470}
-.city-cloud{position:absolute;background:#fff8;width:180px;height:27px;border-radius:99px;filter:blur(7px);opacity:.8}.city-cloud:before,.city-cloud:after{content:"";position:absolute;bottom:0;background:inherit;border-radius:50%}.city-cloud:before{width:68px;height:62px;left:30px}.city-cloud:after{width:75px;height:48px;left:78px}.cloud-one{top:12%;left:7%}.cloud-two{top:19%;right:8%;transform:scale(.75)}
-.skyline{position:absolute;left:0;right:0;bottom:30%;height:35%;display:flex;align-items:flex-end;justify-content:space-around;gap:3px;z-index:-1}
-.building{position:relative;flex:1;height:60%;border:1px solid #37515c;background:linear-gradient(90deg,#547984,#92bdc0 45%,#496875);box-shadow:inset 0 0 10px #132e3b55}
-.building i{display:inline-block;width:17%;height:13%;margin:5% 3% 0;background:#cff3edaa;border:1px solid #47708055}
-.b1{height:70%;clip-path:polygon(0 7%,100% 0,100% 100%,0 100%)}.b2{height:90%;background:linear-gradient(90deg,#7b9da1,#d0d5c7 48%,#60838e)}.b3{height:59%;background:linear-gradient(90deg,#9a8f78,#e5c18e 50%,#9e896e)}.b4{height:100%;background:linear-gradient(90deg,#4e7788,#a3c8c8 50%,#4e7481)}.b5{height:74%;background:linear-gradient(90deg,#8f9b9b,#d5d1b9 50%,#819398)}.b6{height:86%;background:linear-gradient(90deg,#6a8790,#c1d1c8 50%,#607f88)}
-.shop-row{position:absolute;left:0;right:0;bottom:28%;height:9%;display:flex;align-items:center;justify-content:space-evenly;background:linear-gradient(#b99c6b,#564b42);border-top:4px solid #e8c28e;border-bottom:3px solid #322f2b;color:#fff2d1;font-size:clamp(8px,1vw,12px);font-weight:900;letter-spacing:.12em;text-shadow:0 1px 2px #000}
-.street-tree{position:absolute;bottom:28%;font-size:clamp(26px,4vw,52px);filter:drop-shadow(2px 5px 2px #0004);z-index:2}.tree-one{left:5%}.tree-two{right:6%}
-.billboard-post{position:absolute;top:30%;height:40%;width:10px;background:linear-gradient(90deg,#27343d,#91a3aa,#25313a);box-shadow:4px 6px 5px #0003;z-index:1}.post-left{left:calc(50% - min(31vw,320px))}.post-right{right:calc(50% - min(31vw,320px))}
-.billboard-rig{position:absolute;top:5%;left:50%;transform:translateX(-50%);width:min(64%,720px);height:52%;z-index:4;display:flex;justify-content:center;align-items:center;padding:17px 19px 22px;background:linear-gradient(145deg,#f7f7f1,#aebbc0 15%,#4b5960 18%,#1e2b35 21%,#111b23 84%,#566870 90%,#d8e0de);border:3px solid #d2dbdd;border-radius:4px;box-shadow:0 16px 24px #08131d88,0 0 20px #fff6;clip-path:polygon(1.5% 4%,98.5% 0,100% 94%,0 100%)}
-.billboard-rig:before{content:"";position:absolute;inset:8px;border:2px solid #a7b9bd;box-shadow:inset 0 0 10px #ffffff27;pointer-events:none}
-.billboard-lights{position:absolute;top:-14px;left:3%;right:3%;height:24px;display:flex;justify-content:space-around;z-index:5}
-.billboard-lights i{height:18px;width:5px;background:#1b282e;position:relative;transform:rotate(-14deg);transform-origin:bottom}
-.billboard-lights i:after{content:"";position:absolute;left:-7px;top:-5px;width:19px;height:9px;border-radius:3px;background:#fff6c7;box-shadow:0 0 10px 4px #fff1a980;animation:lamp-glow 3.5s ease-in-out infinite alternate}
-.billboard-lights i:nth-child(2n):after{animation-delay:-1.3s}.billboard-screen{height:100%;width:100%;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#f8f4e9,#e5e1d7);border:1px solid #fdf8e7;box-shadow:inset 0 0 12px #ffffff77;cursor:default}.billboard-screen[href]{cursor:pointer}.billboard-poster{display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 3px 12px #0003;border-radius:1px}
-.billboard-beam{position:absolute;z-index:-1;inset:-10% -20% 2%;pointer-events:none;background:linear-gradient(110deg,transparent 30%,#fff6 47%,transparent 58%);transform:translateX(-130%);animation:light-sweep 10s ease-in-out infinite}
-.city-foreground{position:absolute;bottom:25%;left:0;right:0;display:flex;justify-content:space-around;opacity:.95;filter:drop-shadow(0 4px 2px #0003);font-size:clamp(20px,3vw,38px);z-index:3}
-.road{position:absolute;left:0;right:0;bottom:0;height:28%;background:linear-gradient(180deg,#555d5f 0%,#30373b 15%,#20272b 100%);border-top:7px solid #d6c79d;overflow:hidden}
-.road:before{content:"";position:absolute;top:9%;left:0;right:0;border-top:2px solid #c8c8b5aa}.road-divider{position:absolute;left:0;right:0;top:52%;height:6px;background:#f4e5b1;box-shadow:0 4px 0 #10171c}.road-markings{position:absolute;top:74%;left:0;right:0;height:3px;background:repeating-linear-gradient(90deg,#f8f0ce 0 48px,transparent 48px 90px);opacity:.7;animation:road-flow 1.8s linear infinite}
-.vehicle{position:absolute;z-index:3;filter:drop-shadow(0 5px 3px #05090b88);white-space:nowrap;line-height:1}.vehicle span{display:block;font-size:clamp(28px,4vw,48px);transform:scaleX(1.1)}.car-a{top:12%;animation:drive-left 14s linear infinite}.car-b{top:37%;animation:drive-right 19s linear infinite}.car-c{top:59%;animation:drive-left 22s linear infinite}.scooter-a{top:48%;animation:drive-right 12s linear infinite}.scooter-b{top:5%;animation:drive-left 17s linear infinite}.car-b span,.scooter-a span{transform:scaleX(-1)}
-.scene-controls{position:absolute;z-index:8;bottom:12px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:center;gap:10px;color:#fff;font-size:10px;letter-spacing:.1em;font-weight:800;text-shadow:0 1px 3px #000}.sound-toggle{background:#101820d9;color:#fff;border:1px solid #ffffff66;border-radius:999px;padding:9px 13px;font:inherit;font-size:12px;letter-spacing:0;cursor:pointer;backdrop-filter:blur(8px)}.sound-toggle:focus-visible,.visit-link:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.city-scene{height:clamp(600px,58vw,780px);position:relative;isolation:isolate;overflow:hidden;border-radius:13px;background:#202b37;box-shadow:inset 0 0 0 1px #ffffff26}
+.scene-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;z-index:0;user-select:none;pointer-events:none}
+.scene-vignette{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,#0717281c 0%,transparent 45%,#10182030 72%,#070d14b8 100%),linear-gradient(90deg,#09111d22,transparent 22%,transparent 80%,#09111d26)}
+.billboard-display{position:absolute;left:26.9%;top:16.6%;width:48.6%;height:37.7%;z-index:4;display:flex;align-items:center;justify-content:center;overflow:hidden;clip-path:polygon(2.2% 4%,96% 0,100% 96%,0 100%);background:linear-gradient(125deg,#e8e8df,#f7f6ec 45%,#b7c2c6 100%);box-shadow:inset 0 0 16px #fff9}
+.billboard-screen{display:flex;align-items:center;justify-content:center;width:100%;height:100%;overflow:hidden;background:radial-gradient(ellipse at center,#fffdf4 0%,#e9e9df 75%,#a8b4bc 100%);cursor:default}
+.billboard-screen[href]{cursor:pointer}
+.poster-link-image{display:block;max-width:96%;max-height:97%;width:auto;height:97%;object-fit:contain;object-position:center;box-shadow:0 3px 13px #0a172b3b,0 0 0 2px #fff9;border-radius:2px;transition:transform .25s,box-shadow .25s}
+.billboard-screen[href]:hover .poster-link-image{transform:translateY(-2px) scale(1.012);box-shadow:0 7px 22px #07111d66,0 0 0 2px #fff}
+.billboard-screen:focus-visible{outline:4px solid var(--accent);outline-offset:-5px}
+.billboard-screen-glare{position:absolute;inset:0;pointer-events:none;z-index:2;background:linear-gradient(110deg,transparent 28%,#fff7 46%,transparent 56%);transform:translateX(-135%);animation:screen-glint 11s ease-in-out infinite}
+.lamp-row{position:absolute;z-index:5;left:27%;width:48.7%;top:7%;height:6%;display:flex;justify-content:space-around;pointer-events:none}
+.lamp-row i{position:relative;display:block;width:5px;height:100%;background:linear-gradient(90deg,#172530,#81959d,#26353f);transform:rotate(-12deg);transform-origin:top}
+.lamp-row i:after{content:"";position:absolute;top:-3px;left:-7px;width:18px;height:8px;border-radius:3px;background:#fff9d5;border:1px solid #687a80;box-shadow:0 0 9px 4px #ffe4a488;animation:lamp-pulse 3.4s ease-in-out infinite alternate}
+.lamp-row i:nth-child(2n):after{animation-delay:-1.6s}
+.light-sweep{position:absolute;left:26%;top:7%;width:50%;height:48%;pointer-events:none;z-index:5;background:linear-gradient(105deg,transparent 35%,#fff7 48%,transparent 57%);transform:translateX(-120%);mix-blend-mode:screen;animation:frame-sweep 12s ease-in-out infinite}
+.traffic-overlay{position:absolute;left:0;right:0;bottom:0;height:29%;z-index:6;overflow:hidden;pointer-events:none}
+.traffic-lane{position:absolute;left:0;right:0;height:3px;background:repeating-linear-gradient(90deg,#fff1c7e0 0 54px,transparent 54px 105px);opacity:.62;animation:lane-dash 1.6s linear infinite}
+.traffic-lane.one{top:43%}.traffic-lane.two{top:77%;opacity:.32;animation-duration:2.1s}
+.road-glow{position:absolute;height:8px;width:150px;border-radius:99px;filter:blur(8px);opacity:.8}
+.road-glow.warm{left:-10%;top:60%;background:#f1a25d;animation:streak-left 7s linear infinite}.road-glow.cool{right:-10%;top:30%;background:#8bcde9;animation:streak-right 9s linear infinite}
+.traffic-car{position:absolute;width:clamp(105px,13vw,190px);height:clamp(37px,4.4vw,62px);filter:drop-shadow(0 7px 5px #0009);will-change:transform}
+.traffic-car .body{position:absolute;left:2%;right:2%;bottom:14%;height:43%;border-radius:18px 25px 8px 8px;background:linear-gradient(180deg,var(--car-hi),var(--car-color) 50%,var(--car-dark));border:1px solid #ffffff80}
+.traffic-car .roof{position:absolute;left:23%;top:10%;width:52%;height:42%;background:linear-gradient(130deg,#91b6c7,#213947 65%,#668b99);clip-path:polygon(17% 0,78% 0,100% 100%,0 100%);border-top:2px solid #e1e9e6}
+.traffic-car .glassline{position:absolute;left:48%;top:12%;height:36%;width:2px;background:#d0e2e6aa}
+.traffic-car .wheel{position:absolute;bottom:0;width:20%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle,#a9b6bb 0 20%,#111820 23% 62%,#68757b 66% 74%,#0e1317 77%);border:2px solid #0c1115}
+.traffic-car .wheel.w1{left:15%}.traffic-car .wheel.w2{right:15%}
+.traffic-car .headlamp,.traffic-car .taillamp{position:absolute;bottom:30%;height:8px;width:10px;border-radius:2px;box-shadow:0 0 9px 3px currentColor}
+.traffic-car .headlamp{right:1%;background:#fff3c0;color:#ffe9a3}.traffic-car .taillamp{left:1%;background:#ff594e;color:#ff544b}
+.traffic-car.car-red{--car-color:#9d3437;--car-hi:#d27670;--car-dark:#4f2027;top:19%;animation:traffic-left 16s linear infinite}
+.traffic-car.car-silver{--car-color:#75868e;--car-hi:#c8d4d4;--car-dark:#39464d;top:54%;width:clamp(125px,16vw,220px);animation:traffic-right 20s linear infinite;animation-delay:-7s}
+.traffic-car.car-blue{--car-color:#263f5c;--car-hi:#7799ad;--car-dark:#111f32;top:72%;width:clamp(95px,11vw,155px);height:clamp(32px,3.7vw,52px);animation:traffic-left 23s linear infinite;animation-delay:-12s}
+.traffic-car.reverse .body{transform:scaleX(-1)}.traffic-car.reverse .roof{transform:scaleX(-1)}.traffic-car.reverse .headlamp{left:1%;right:auto}.traffic-car.reverse .taillamp{right:1%;left:auto}
+.traffic-scooter{position:absolute;width:82px;height:50px;top:35%;filter:drop-shadow(0 5px 4px #0009);animation:traffic-right 12s linear infinite;animation-delay:-3s}
+.traffic-scooter .rider{position:absolute;left:35px;top:1px;width:15px;height:20px;border-radius:48% 48% 35% 35%;background:linear-gradient(90deg,#172532,#49616c);transform:rotate(-13deg)}
+.traffic-scooter .helmet{position:absolute;left:32px;top:-3px;width:20px;height:13px;border-radius:60% 60% 35% 35%;background:#e4e5d6;border-bottom:3px solid #5b6a70}
+.traffic-scooter .scoot-body{position:absolute;left:14px;top:24px;width:55px;height:12px;border-radius:8px 18px 4px 4px;background:linear-gradient(#eab66b,#7e3e2b);transform:skew(-12deg)}
+.traffic-scooter .scoot-wheel{position:absolute;top:31px;width:17px;height:17px;border-radius:50%;background:radial-gradient(circle,#c5d1d3 0 15%,#111921 22% 70%,#78858b 72% 79%,#111 81%)}
+.traffic-scooter .scoot-wheel.a{left:9px}.traffic-scooter .scoot-wheel.b{right:8px}
+.traffic-scooter .scoot-light{position:absolute;right:5px;top:25px;width:7px;height:5px;background:#fff0b1;box-shadow:0 0 8px 3px #ffe3a5;border-radius:3px}
+.traffic-scooter.reverse{transform:scaleX(-1);animation-name:traffic-left;top:62%;animation-delay:-5s}
+.city-caption{display:flex;position:absolute;left:14px;right:14px;top:14px;z-index:8;justify-content:space-between;align-items:center;gap:10px;pointer-events:none}
+.city-chip{background:#111d2bd9;color:#f7f5ec;border:1px solid #ffffff55;border-radius:999px;padding:7px 11px;font-size:10px;font-weight:850;letter-spacing:.12em;backdrop-filter:blur(8px)}
+.scene-controls{position:absolute;z-index:9;bottom:12px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:center;gap:10px;color:#fff;font-size:10px;letter-spacing:.1em;font-weight:800;text-shadow:0 1px 3px #000}
+.sound-toggle{background:#101820e8;color:#fff;border:1px solid #ffffff88;border-radius:999px;padding:9px 13px;font:inherit;font-size:12px;letter-spacing:0;cursor:pointer;backdrop-filter:blur(8px)}
+.sound-toggle:focus-visible,.visit-link:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .featured-info{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:15px 3px 3px}.featured-info strong{font-size:16px}.featured-info .caption{margin:3px 0 0;padding:0;font-size:12px}.featured-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.visit-link{color:var(--accent);font-size:13px;font-weight:800;text-decoration:none;white-space:nowrap}
-@keyframes drive-left{from{transform:translateX(110vw)}to{transform:translateX(-160px)}}@keyframes drive-right{from{transform:translateX(-160px)}to{transform:translateX(110vw)}}@keyframes road-flow{from{background-position:0 0}to{background-position:-90px 0}}@keyframes lamp-glow{from{opacity:.72;box-shadow:0 0 7px 2px #fff1a95c}to{opacity:1;box-shadow:0 0 15px 6px #fff2b6bd}}@keyframes light-sweep{0%,15%{transform:translateX(-130%)}55%,70%{transform:translateX(130%)}100%{transform:translateX(130%)}}
-@media(max-width:760px){.city-scene{height:clamp(450px,125vw,600px)}.billboard-rig{top:8%;width:88%;height:45%;padding:12px 11px 15px}.billboard-post{top:30%;height:37%;width:7px}.post-left{left:5%}.post-right{right:5%}.shop-row{bottom:28%;height:8%;font-size:8px}.street-tree{bottom:26%;font-size:25px}.city-foreground{bottom:24%;font-size:22px}.road{height:27%}.vehicle span{font-size:30px}.scene-controls{left:8px;right:8px;bottom:7px}.featured-info{align-items:flex-start;flex-direction:column}.featured-actions{width:100%;justify-content:space-between}.billboard-lights i:nth-child(n+5){display:none}}
-@media(max-width:400px){.city-scene{height:460px}.billboard-rig{height:42%;width:92%;padding:10px}.shop-row span:nth-child(n+4){display:none}.scene-controls>span{font-size:8px}.vehicle span{font-size:25px}}
-@media(prefers-reduced-motion:reduce){.vehicle,.road-markings,.billboard-lights i:after,.billboard-beam{animation:none!important}.vehicle{display:none}.billboard-beam{opacity:0}}
+@keyframes traffic-left{from{transform:translateX(115vw)}to{transform:translateX(-250px)}}
+@keyframes traffic-right{from{transform:translateX(-250px)}to{transform:translateX(115vw)}}
+@keyframes lane-dash{from{background-position:0 0}to{background-position:-105px 0}}
+@keyframes lamp-pulse{from{opacity:.7;box-shadow:0 0 7px 3px #ffe1a45d}to{opacity:1;box-shadow:0 0 17px 7px #ffe7a9dd}}
+@keyframes frame-sweep{0%,12%{transform:translateX(-120%);opacity:0}28%,38%{opacity:.8}60%,100%{transform:translateX(140%);opacity:0}}
+@keyframes screen-glint{0%,18%{transform:translateX(-135%);opacity:0}34%,43%{opacity:.75}66%,100%{transform:translateX(135%);opacity:0}}
+@keyframes streak-left{from{transform:translateX(0)}to{transform:translateX(125vw)}}@keyframes streak-right{from{transform:translateX(0)}to{transform:translateX(-125vw)}}
+@media(max-width:760px){.city-scene{height:clamp(470px,110vw,620px)}.billboard-display{left:16%;top:17%;width:68%;height:29%;}.lamp-row{left:17%;width:67%;top:8%;height:5%}.light-sweep{left:14%;top:9%;width:72%;height:38%}.traffic-overlay{height:32%}.traffic-car{width:118px;height:42px}.traffic-car.car-silver{width:135px}.traffic-car.car-blue{width:100px;height:34px}.traffic-scooter{transform:scale(.82);transform-origin:left top}.traffic-scooter.reverse{transform:scaleX(-1) scale(.82);transform-origin:center top}.city-caption{left:8px;right:8px;top:8px}.city-chip{font-size:8px;padding:6px 8px}.scene-controls{left:8px;right:8px;bottom:7px}.featured-info{align-items:flex-start;flex-direction:column}.featured-actions{width:100%;justify-content:space-between}}
+@media(max-width:400px){.city-scene{height:470px}.billboard-display{left:12%;width:76%;height:27%;top:17%}.lamp-row{left:13%;width:75%;top:8%}.city-chip{letter-spacing:.06em}.city-chip:first-child{max-width:65%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.traffic-scooter{display:none}}
+@media(prefers-reduced-motion:reduce){.traffic-car,.traffic-scooter,.traffic-lane,.road-glow,.lamp-row i:after,.light-sweep,.billboard-screen-glare{animation:none!important}.traffic-overlay .traffic-car,.traffic-overlay .traffic-scooter{display:none}.billboard-screen-glare,.light-sweep{display:none}}
+.vehicle{display:none}.billboard-beam{opacity:0}}
 
 </style>
 </head>
@@ -56,26 +85,30 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0
 <div class="counter"><strong id="count">—</strong><small>posters in the global gallery</small><div class="bar"><div id="barfill"></div></div><small id="freeleft">First 1,000 approved uploads are free</small></div></header>
 <section class="feature">
 <div class="feature-head"><strong>THE GLOBAL WALL · LIVE CITY EDITION</strong><span class="tag">Community canvas</span></div>
-<div class="city-scene" id="cityScene" aria-label="Animated city street with a central CrowdCanvas billboard and traffic">
- <div class="sky-glow"></div><div class="sun-glow"></div><div class="city-cloud cloud-one"></div><div class="city-cloud cloud-two"></div>
- <div class="skyline" aria-hidden="true">
-  <div class="building b1"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="building b2"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="building b3"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="building b4"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="building b5"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="building b6"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="city-scene" id="cityScene" aria-label="Downtown US city billboard at dusk with illuminated steel supports and moving traffic">
+ <img class="scene-bg" src="./assets/us-city-billboard.svg" alt="" aria-hidden="true" width="1600" height="900">
+ <div class="scene-vignette" aria-hidden="true"></div>
+ <div class="billboard-display">
+  <div class="billboard-screen" id="billboardScreen">
+   <a id="featuredLink" class="poster-link" aria-label="Open featured poster destination">
+    <img id="featuredPoster" class="poster-link-image" alt="Latest poster shared with CrowdCanvas" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 800'%3E%3Crect width='600' height='800' fill='%23f6f1e5'/%3E%3Ctext x='50%25' y='42%25' text-anchor='middle' font-family='Arial,sans-serif' font-size='54' font-weight='700' fill='%231b2b40'%3ECROWD%3C/text%3E%3Ctext x='50%25' y='51%25' text-anchor='middle' font-family='Arial,sans-serif' font-size='54' font-weight='700' fill='%23a4d82b'%3ECANVAS%3C/text%3E%3Ctext x='50%25' y='60%25' text-anchor='middle' font-family='Arial,sans-serif' font-size='24' fill='%233d4b5a'%3EYour poster belongs here%3C/text%3E%3C/svg%3E">
+   </a>
+   <div class="billboard-screen-glare" aria-hidden="true"></div>
+  </div>
  </div>
- <div class="shop-row" aria-hidden="true"><span>MARKET</span><span>STUDIO</span><span>CAFE</span><span>DESIGN</span><span>LOCAL SHOP</span></div>
- <div class="street-tree tree-one" aria-hidden="true">🌳</div><div class="street-tree tree-two" aria-hidden="true">🌳</div>
- <div class="billboard-post post-left"></div><div class="billboard-post post-right"></div>
- <div class="billboard-rig">
-  <div class="billboard-lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-  <a id="featuredLink" class="billboard-screen" aria-label="Open featured poster destination">
-   <img id="featuredPoster" class="billboard-poster" alt="Latest poster shared with CrowdCanvas" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 800'%3E%3Crect width='600' height='800' fill='%23f6f1e5'/%3E%3Ctext x='50%25' y='42%25' text-anchor='middle' font-family='Arial,sans-serif' font-size='54' font-weight='700' fill='%231b2b40'%3ECROWD%3C/text%3E%3Ctext x='50%25' y='51%25' text-anchor='middle' font-family='Arial,sans-serif' font-size='54' font-weight='700' fill='%23a4d82b'%3ECANVAS%3C/text%3E%3Ctext x='50%25' y='60%25' text-anchor='middle' font-family='Arial,sans-serif' font-size='24' fill='%233d4b5a'%3EYour poster belongs here%3C/text%3E%3C/svg%3E">
-  </a>
-  <div class="billboard-beam" aria-hidden="true"></div>
+ <div class="lamp-row" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+ <div class="light-sweep" aria-hidden="true"></div>
+ <div class="traffic-overlay" aria-hidden="true">
+  <div class="traffic-lane one"></div><div class="traffic-lane two"></div>
+  <div class="road-glow warm"></div><div class="road-glow cool"></div>
+  <div class="traffic-car car-red"><i class="body"></i><i class="roof"></i><i class="glassline"></i><i class="wheel w1"></i><i class="wheel w2"></i><i class="headlamp"></i><i class="taillamp"></i></div>
+  <div class="traffic-car car-silver reverse"><i class="body"></i><i class="roof"></i><i class="glassline"></i><i class="wheel w1"></i><i class="wheel w2"></i><i class="headlamp"></i><i class="taillamp"></i></div>
+  <div class="traffic-car car-blue"><i class="body"></i><i class="roof"></i><i class="glassline"></i><i class="wheel w1"></i><i class="wheel w2"></i><i class="headlamp"></i><i class="taillamp"></i></div>
+  <div class="traffic-scooter"><i class="rider"></i><i class="helmet"></i><i class="scoot-body"></i><i class="scoot-wheel a"></i><i class="scoot-wheel b"></i><i class="scoot-light"></i></div>
+  <div class="traffic-scooter reverse"><i class="rider"></i><i class="helmet"></i><i class="scoot-body"></i><i class="scoot-wheel a"></i><i class="scoot-wheel b"></i><i class="scoot-light"></i></div>
  </div>
- <div class="city-foreground" aria-hidden="true"><span>🌿</span><span>🌳</span><span>🌿</span><span>🌳</span><span>🌿</span></div>
- <div class="road" aria-hidden="true"><div class="road-divider"></div><div class="road-markings"></div>
-  <div class="vehicle vehicle-car car-a"><span>🚙</span></div><div class="vehicle vehicle-scooter scooter-a"><span>🛵</span></div><div class="vehicle vehicle-car car-b"><span>🚗</span></div><div class="vehicle vehicle-scooter scooter-b"><span>🏍️</span></div><div class="vehicle vehicle-car car-c"><span>🚕</span></div>
- </div>
- <div class="scene-controls"><span>ANIMATED CITY BILLBOARD</span><button id="soundToggle" class="sound-toggle" type="button" aria-pressed="false">🔇 Sound off</button></div>
+ <div class="city-caption"><span class="city-chip">CROWDCANVAS · CITY EDITION</span><span class="city-chip">LIVE COMMUNITY BILLBOARD</span></div>
+ <div class="scene-controls"><span>ILLUMINATED BILLBOARD · CITY TRAFFIC</span><button id="soundToggle" class="sound-toggle" type="button" aria-pressed="false">🔇 Sound off</button></div>
 </div>
 <div class="featured-info"><div><strong id="featuredTitle">Latest community poster</strong><p id="featuredCaption" class="caption">The newest community poster will appear on the billboard.</p></div><div class="featured-actions"><a id="featuredVisit" class="visit-link" hidden target="_blank" rel="noopener noreferrer">Visit website ↗</a><button id="uploadJump" class="btn" type="button">Put your poster on the wall ↓</button></div></div>
 </section>
