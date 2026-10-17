@@ -1,7 +1,7 @@
 # CrowdCanvas V1 — GitHub Pages + Supabase
 
 ## Included
-- `index.html`: responsive upload form and global gallery.
+- `index.html`: responsive upload form and global gallery with search and a full-size lightbox (share/copy link), SVG icons.
 - `supabase-setup.sql`: storage bucket, table, and public access policies.
 
 ## Local preview note
