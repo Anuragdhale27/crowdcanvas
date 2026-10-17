@@ -1,11 +1,21 @@
 # CrowdCanvas V1 — GitHub Pages + Supabase
 
-## Included
-- `index.html`: responsive upload form and global gallery.
-- `supabase-setup.sql`: storage bucket, table, and public access policies.
+## Stack
+Vite + React + TypeScript, managed with **bun** (do not use npm). Supabase for storage and data.
 
-## Local preview note
-The city scene uses `assets/us-city-billboard.svg`. The current `index.html` also embeds a fallback copy of that artwork so a single-file local preview can still show the city scene when the relative asset path is missing. For normal development, download or clone the entire repository and keep the `assets/` folder beside `index.html`; do not copy only one file when testing a changed asset.
+## Development
+```
+bun install
+bun run dev        # local dev server
+bun run lint
+bun run test:run
+bun run build      # tsc -b && vite build -> dist/
+bun run preview
+```
+
+Environment variables (optional; copy to `.env.local`). Defaults to the project's public values if unset:
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY` (public anon/publishable key only, never `service_role`)
 
 ## 1. Create Supabase project
 1. Create a project at https://supabase.com/dashboard.
@@ -15,18 +25,12 @@ The city scene uses `assets/us-city-billboard.svg`. The current `index.html` als
 5. Copy the Project URL and the publishable/anon public key. Never use `service_role` or secret keys in browser code.
 
 ## 2. Configure the website
-1. Open `index.html` in a text editor.
-2. Find:
-   - `PASTE_YOUR_SUPABASE_PROJECT_URL_HERE`
-   - `PASTE_YOUR_SUPABASE_PUBLISHABLE_OR_ANON_KEY_HERE`
-3. Replace each placeholder with your project's URL and public/publishable anon key.
-4. Save. Do not add a service-role key to the website.
+Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` in `.env.local` for local work. For deployment, add them as repository variables (Settings -> Secrets and variables -> Actions -> Variables); the workflow passes them to the build. Do not add a service-role key.
 
 ## 3. Deploy on GitHub Pages
-1. Create a GitHub repository, e.g. `crowdcanvas`.
-2. Upload `index.html` to the repository root. You may keep `supabase-setup.sql` and this README in the repo too.
-3. Repository -> Settings -> Pages -> Deploy from a branch -> `main` -> `/ (root)` -> Save.
-4. Wait for the GitHub Pages URL to become available.
+1. Push to `main`; `.github/workflows/deploy.yml` builds with bun and deploys `dist/`.
+2. Repository -> Settings -> Pages -> Build and deployment -> Source: **GitHub Actions** (not "Deploy from a branch").
+3. `public/CNAME` is copied into `dist/` so the custom domain persists.
 
 ## 4. Connect crowdcanvas.workslab.in
 1. In the repository Settings -> Pages, set Custom domain to `crowdcanvas.workslab.in` and save.
