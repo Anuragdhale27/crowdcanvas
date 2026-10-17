@@ -1,16 +1,22 @@
 import { useEffect, useRef, useState } from 'react'
 import { Icon } from './Icon'
+import { SceneArt } from './SceneArt'
+import { Bus, Scooter, Sedan, Suv, Taxi, VehicleDefs } from './Vehicles'
 import { normalizeDestination, type Poster } from '../lib/utils'
 
 const PLACEHOLDER =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 800'%3E%3Crect width='600' height='800' fill='%23f6f1e5'/%3E%3Ctext x='50%25' y='42%25' text-anchor='middle' font-family='Arial,sans-serif' font-size='54' font-weight='700' fill='%231b2b40'%3ECROWD%3C/text%3E%3Ctext x='50%25' y='51%25' text-anchor='middle' font-family='Arial,sans-serif' font-size='54' font-weight='700' fill='%23a4d82b'%3ECANVAS%3C/text%3E%3Ctext x='50%25' y='60%25' text-anchor='middle' font-family='Arial,sans-serif' font-size='24' fill='%233d4b5a'%3EYour poster belongs here%3C/text%3E%3C/svg%3E"
 
-const Car = ({ cls }: { cls: string }) => (
-  <div className={`traffic-car ${cls}`}><i className="body" /><i className="roof" /><i className="glassline" /><i className="wheel w1" /><i className="wheel w2" /><i className="headlamp" /><i className="taillamp" /></div>
-)
-const Scooter = ({ cls = '' }: { cls?: string }) => (
-  <div className={`traffic-scooter ${cls}`.trim()}><i className="rider" /><i className="helmet" /><i className="scoot-body" /><i className="scoot-wheel a" /><i className="scoot-wheel b" /><i className="scoot-light" /></div>
-)
+type V = { k: 'sedan' | 'suv' | 'taxi' | 'bus' | 'scooter'; lane: 'far' | 'near'; w: number; dur: number; delay: number; color?: string }
+// far lane drives left (mirrored), near lane drives right
+const TRAFFIC: V[] = [
+  { k: 'sedan', lane: 'far', w: 11, dur: 22, delay: -4, color: 'red' }, { k: 'bus', lane: 'far', w: 20, dur: 30, delay: -22.5 },
+  { k: 'taxi', lane: 'far', w: 11, dur: 24, delay: -11 }, { k: 'suv', lane: 'near', w: 13.5, dur: 19, delay: -6, color: 'blue' },
+  { k: 'sedan', lane: 'near', w: 13, dur: 24, delay: -15, color: 'silver' }, { k: 'scooter', lane: 'near', w: 6.5, dur: 14, delay: -2 },
+  { k: 'taxi', lane: 'near', w: 13, dur: 27, delay: -21 }, { k: 'scooter', lane: 'far', w: 5.5, dur: 17, delay: -5 },
+]
+const Vehicle = ({ k, color }: Pick<V, 'k' | 'color'>) =>
+  k === 'sedan' ? <Sedan color={color} /> : k === 'suv' ? <Suv color={color} /> : k === 'taxi' ? <Taxi /> : k === 'bus' ? <Bus /> : <Scooter />
 
 const reducedMotion = () => typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches
 
@@ -82,7 +88,8 @@ export function CityScene({ featured }: { featured: Poster | null }) {
     <section className="feature">
       <div className="feature-head"><strong>THE GLOBAL WALL · LIVE CITY EDITION</strong><span className="tag">Community canvas</span></div>
       <div className={'city-scene ' + (motion ? 'motion-enabled' : 'motion-reduced')} aria-label="Downtown US city billboard at dusk with illuminated steel supports and moving traffic">
-        <img className="scene-bg" src="/assets/us-city-billboard.svg" alt="" aria-hidden="true" width="1600" height="900" />
+        <div className="scene-stage">
+        <SceneArt />
         <div className="scene-vignette" aria-hidden="true" />
         <div className="billboard-display">
           <div className="billboard-screen">
@@ -92,15 +99,17 @@ export function CityScene({ featured }: { featured: Poster | null }) {
             <div className="billboard-screen-glare" aria-hidden="true" />
           </div>
         </div>
-        <div className="lamp-row" aria-hidden="true"><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
         <div className="light-sweep" aria-hidden="true" />
         <div className="traffic-overlay" aria-hidden="true">
-          <div className="traffic-lane one" /><div className="traffic-lane two" />
-          <div className="road-glow warm" /><div className="road-glow cool" />
-          <Car cls="car-red" /><Car cls="car-silver reverse" /><Car cls="car-blue" />
-          <Scooter /><Scooter cls="reverse" />
+          <VehicleDefs />
+          {TRAFFIC.map((t, i) => (
+            <div key={i} className={`veh ${t.lane} ${t.lane === 'far' ? 'go-l rev' : 'go-r'}`} style={{ width: `${t.w}%`, '--w': `${t.w}%`, '--dur': `${t.dur}s`, '--delay': `${t.delay}s` } as React.CSSProperties}>
+              <Vehicle k={t.k} color={t.color} />
+            </div>
+          ))}
         </div>
         <div className="city-caption"><span className="city-chip">CROWDCANVAS · CITY EDITION</span><span className="city-chip">LIVE COMMUNITY BILLBOARD</span></div>
+        </div>
         <div className="scene-controls">
           <span>ILLUMINATED BILLBOARD · CITY TRAFFIC</span>
           <div className="control-group">
